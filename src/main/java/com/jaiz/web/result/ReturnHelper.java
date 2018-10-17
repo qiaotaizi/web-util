@@ -10,28 +10,28 @@ public class ReturnHelper {
 
     static{
         ResultVO fail=new ResultVO();
-        fail.setDecr(ReturnConstants.ERROR);
-        fail.setCode(ReturnConstants.FAIL_CODE);
+        fail.setMessage(ReturnConstants.ERROR);
+        fail.setStatus(ReturnConstants.FAIL_CODE);
         UNIVERSAL_FAIL=fail;
 
         ResultVO success=new ResultVO();
-        success.setDecr(ReturnConstants.SUCCESS);
-        success.setCode(ReturnConstants.SUCCESS_CODE);
+        success.setMessage(ReturnConstants.SUCCESS);
+        success.setStatus(ReturnConstants.SUCCESS_CODE);
         UNIVERSAL_SUCCESS=success;
     }
 
     /**
      * 自定义全部结果
-     * @param code
-     * @param desr
+     * @param status
+     * @param message
      * @param data
      * @return
      */
-    protected ResultVO result(int code, String desr, Map<String,Object> data){
+    protected ResultVO result(int status, String message, Map<String,Object> data){
         ResultVO vo=new ResultVO();
-        vo.setCode(code);
+        vo.setStatus(status);
         vo.setData(data);
-        vo.setDecr(desr);
+        vo.setMessage(message);
         return vo;
     }
 
@@ -53,16 +53,21 @@ public class ReturnHelper {
 
     /**
      * 自定义失败结果
-     * @param code
-     * @param desr
+     * @param status
+     * @param message
      * @return
      */
-    protected ResultVO fail(int code,String desr){
-        return result(code,desr,null);
+    protected ResultVO fail(int status,String message){
+        return result(status,message,null);
     }
 
-    protected ResultVO fail(String desr){
-        return fail(ReturnConstants.FAIL_CODE,desr);
+    /**
+     * 自定义失败信息结果
+     * @param message
+     * @return
+     */
+    protected ResultVO fail(String message){
+        return fail(ReturnConstants.FAIL_CODE,message);
     }
 
     /**

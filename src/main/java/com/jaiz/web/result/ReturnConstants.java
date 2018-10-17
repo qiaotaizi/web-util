@@ -9,4 +9,8 @@ public class ReturnConstants {
     public static final String SUCCESS="success";
 
     public static final String ERROR="error";
+
+    public static final String SIGN_INVALID="sign invalid";
+
+    public static final int SIGN_INVALID_CODE=3;
 }
