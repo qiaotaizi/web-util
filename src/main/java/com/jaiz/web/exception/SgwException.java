@@ -1,5 +1,8 @@
-package com.jaiz.web;
+package com.jaiz.web.exception;
 
+/**
+ * 自定义异常
+ */
 public class SgwException extends RuntimeException{
 
     public SgwException(){
@@ -9,4 +12,5 @@ public class SgwException extends RuntimeException{
     public SgwException(String message){
         super(message);
     }
+
 }
