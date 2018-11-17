@@ -5,16 +5,34 @@ import java.util.Map;
 
 public class ResultVO {
 
+    /**
+     * http状态码
+     */
     private int status;
 
+    /**
+     * 问题描述
+     */
     private String message;
 
+    /**
+     * 时间戳
+     */
     private Date timestamp;
 
+    /**
+     * 异常
+     */
     private String error;
 
+    /**
+     * 请求路径
+     */
     private String path;
 
+    /**
+     * 返回值结果集
+     */
     private Map<String,Object> data;
 
     public int getStatus() {
